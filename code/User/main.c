@@ -9,10 +9,10 @@
 #include "motor.h"
 #include "Encoder.h"
 
-// 可调用的全局变量 MotorA,MotorB,outMpu(struct),Encoder_A,Encoder_B
+// MotorA,MotorB,outMpu(struct),Encoder_A,Encoder_B
 void show(void);
 
-int main(void){//欧拉角
+int main(void){//脜路脌颅陆脟
 	delay_init();
 	MPU_Init();
 	IIC_GPIO_Init();
@@ -24,12 +24,13 @@ int main(void){//欧拉角
 	TIM_Cmd(TIM1, ENABLE);
 	while(1)
 	{
-		mpu_dmp_get_data(&outMpu.pitch,&outMpu.roll,&outMpu.yaw);
-		show();
-		Get_PID_Data(outMpu.pitch,outMpu.yaw,outMpu.gyro_y,Encoder_A,Encoder_B,64,&MotorA,&MotorB);	
-		SetMotor(MotorA,MotorB);
-	}
+			//while(mpu_dmp_get_data(&outMpu.pitch,&outMpu.roll,&outMpu.yaw));
+			//Get_PID_Data(outMpu.pitch,outMpu.yaw,outMpu.gyro_y,Encoder_A,Encoder_B,64,&MotorA,&MotorB);
+			//SetMotor(MotorA,MotorB);
+			show();
+	}	
 }
+	
 void show(void){
 		if(MotorA<0) 
 		{
@@ -45,29 +46,38 @@ void show(void){
 		if(Encoder_B<0) 
 		{
 			OLED_ShowChar(46,3,'-',2);
-			OLED_ShowNum(50,3,-Encoder_B,6,2);
+			OLED_ShowNum(50,3,-Encoder_B,4,2);
 		}
 		else 
 		{
 			OLED_ShowChar(46,3,'+',2);
-			OLED_ShowNum(50,3,Encoder_B,6,2);
+			OLED_ShowNum(50,3,Encoder_B,4,2);
 		}
 		
 		if(Encoder_A<0) 
 		{
 			OLED_ShowChar(46,5,'-',2);
-			OLED_ShowNum(50,5,-Encoder_A,6,2);
+			OLED_ShowNum(50,5,-Encoder_A,4,2);
 		}
 		else 
 		{
 			OLED_ShowChar(46,5,'+',2);
-			OLED_ShowNum(50	,5,Encoder_A,6,2);
+			OLED_ShowNum(50	,5,Encoder_A,4,2);
 		}
 }
-void TIM1_UP_IRQHandler(void){//中断函数
+uint16_t time1=0,time2=0;
+void TIM1_UP_IRQHandler(void){//脰脨露脧潞炉脢媒
 	if(TIM_GetITStatus(TIM1,TIM_IT_Update)==SET){
 		Encoder_A=Encoder_Get_A();
 		Encoder_B=Encoder_Get_B();
+		while(mpu_dmp_get_data(&outMpu.pitch,&outMpu.roll,&outMpu.yaw));
+		Get_PID_Data(outMpu.pitch,outMpu.yaw,outMpu.gyro_y,Encoder_A,Encoder_B,64,&MotorA,&MotorB);
+		SetMotor(MotorA,MotorB);
+		if(time2==40){
+			show();
+			time2=0;
+		}
+		time2++;
 		TIM_ClearITPendingBit(TIM1,TIM_IT_Update);
 	}
 }
