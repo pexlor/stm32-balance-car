@@ -20,7 +20,7 @@ void PWM_Init(void){
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;
 	TIM_TimeBaseInitStruct.TIM_ClockDivision=TIM_CKD_DIV1;
 	TIM_TimeBaseInitStruct.TIM_CounterMode=TIM_CounterMode_Up;
-	TIM_TimeBaseInitStruct.TIM_Period=8000-1;//自动重1装器ARR
+	TIM_TimeBaseInitStruct.TIM_Period=10000-1;//自动重1装器ARR
 	TIM_TimeBaseInitStruct.TIM_Prescaler=1-1;//预分频PSC
 	TIM_TimeBaseInitStruct.TIM_RepetitionCounter=0;
 	TIM_TimeBaseInit(TIM3,&TIM_TimeBaseInitStruct);
