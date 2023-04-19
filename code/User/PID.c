@@ -20,14 +20,14 @@ struct PID_Arg{
 };
 
 struct PID_Arg ARG = {
-	.Balance_Kp=-245 ,//-230 245
-	.Balance_Kd=-1.75,//-0.16 0.50
-	.Velocity_Kp=-195,//-48 70 100
-	.Velocity_Ki=-3.4,//-0.24 0.21 0.325
+	.Balance_Kp=-300 ,//-230 245
+	.Balance_Kd=-1.5,//-0.16 0.50
+	.Velocity_Kp=-150,//-48 70 100
+	.Velocity_Ki=-0.95,//-0.24 0.21 0.325
 	.Turn_Kp = 70,
 	.Turn_Kd = 0.5,
 };
-int Vertical_Ring_PD(float pitch,float gyro_y,int mechanicla_balance){//Ö±Á¢»·
+int Vertical_Ring_PD(float pitch,float gyro_y,int mechanicla_balance){//ç›´ç«‹çŽ¯
 	float Bias;
 	int Data;
 	Bias=pitch-mechanicla_balance;
@@ -35,16 +35,16 @@ int Vertical_Ring_PD(float pitch,float gyro_y,int mechanicla_balance){//Ö±Á¢»·
 	return Data;
 }
 
-int Vertical_Speed_PI(float pitch,int encoder_left,int encoder_right,int movement){//ËÙ¶È»·
+int Vertical_Speed_PI(float pitch,int encoder_left,int encoder_right,int movement){//é€Ÿåº¦çŽ¯
 	static float  Speed_I=0,Speed_last=0;
 	float Data,Speed_P;
 	Speed_P=encoder_left+encoder_right-0;
 	Speed_last*=0.8f;
-	Speed_last+=Speed_P*0.2f;//Ò»½×µÍÍ¨ÂË²¨
+	Speed_last+=Speed_P*0.2f;//ä¸€é˜¶ä½Žé€šæ»¤æ³¢
 	Speed_I+=Speed_last;
 	Speed_last-=movement;
 	if(Speed_I>7000) Speed_I=7000;
-	if(Speed_I<-7000) Speed_I=-7000;//»ý·ÖÏÞÖÆ
+	if(Speed_I<-7000) Speed_I=-7000;//ç§¯åˆ†é™åˆ¶
 	Data=ARG.Velocity_Kp*Speed_P+ARG.Velocity_Ki*Speed_I;
 	if(Turn_off(pitch)){
 		Speed_I=0;
@@ -52,7 +52,7 @@ int Vertical_Speed_PI(float pitch,int encoder_left,int encoder_right,int movemen
 	return Data;
 }
 
-int Vertical_Turn_PD(u8 CCD,float yaw){//×ªÏò»·
+int Vertical_Turn_PD(u8 CCD,float yaw){//è½¬å‘çŽ¯
 	float Turn;
 	float Bias;
 	Bias=CCD-64;
@@ -60,7 +60,7 @@ int Vertical_Turn_PD(u8 CCD,float yaw){//×ªÏò»·
 	return Turn;
 }
 
-int Turn_off(float pitch){//µøÂä±£»¤
+int Turn_off(float pitch){//è·Œè½ä¿æŠ¤
 	if(pitch>60||pitch<-60){
 		SetMotorASpeed(0);
 		SetMotorBSpeed(0);
@@ -70,7 +70,7 @@ int Turn_off(float pitch){//µøÂä±£»¤
 	}
 }
 
-void PWM_Limiting(int *motor1,int *motor2)//ËÙ¶ÈÏÞÖÆ
+void PWM_Limiting(int *motor1,int *motor2)//é€Ÿåº¦é™åˆ¶
 {
 	int Amplitude=5204;
 	if(*motor1<-Amplitude) *motor1=-Amplitude;	
@@ -80,13 +80,13 @@ void PWM_Limiting(int *motor1,int *motor2)//ËÙ¶ÈÏÞÖÆ
 }
 void Get_PID_Data(float pitch,float yaw,float gyro_y,int encoder_left,int encoder_right,int Contrl_Turn,int *Motor_A,int *Motor_B){
 	
-	int Balance_PWm =Vertical_Ring_PD(pitch,gyro_y,Mechanicla_balance);//Ö±Á¢»·
-	int Velocity_Pwm = Vertical_Speed_PI(pitch,encoder_left,encoder_right,Movement);//ËÙ¶È»·
+	int Balance_PWm =Vertical_Ring_PD(pitch,gyro_y,Mechanicla_balance);//ç›´ç«‹çŽ¯
+	int Velocity_Pwm = Vertical_Speed_PI(pitch,encoder_left,encoder_right,Movement);//é€Ÿåº¦çŽ¯
 	int Turn_Pwm = Vertical_Turn_PD(Contrl_Turn,yaw);
 	*Motor_A = Balance_PWm+Velocity_Pwm+Turn_Pwm ;
 	*Motor_B = Balance_PWm+Velocity_Pwm-Turn_Pwm ;
-	PWM_Limiting(Motor_A,Motor_B);//pwmÏÞ·ù
-	if(Turn_off(pitch)){//µøÂä±£»¤
+	PWM_Limiting(Motor_A,Motor_B);//pwmé™å¹…
+	if(Turn_off(pitch)){//è·Œè½ä¿æŠ¤
 		*Motor_A = 0;
 		*Motor_B = 0;
 	}
