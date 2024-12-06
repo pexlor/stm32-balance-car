@@ -1,7 +1,7 @@
-.\objects\my_i2c.o: Hardware\My_I2C.c
+.\objects\my_i2c.o: Protocol\My_I2C.c
 .\objects\my_i2c.o: .\Start\stm32f10x.h
 .\objects\my_i2c.o: .\Start\core_cm3.h
-.\objects\my_i2c.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\my_i2c.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\my_i2c.o: .\Start\system_stm32f10x.h
 .\objects\my_i2c.o: .\User\stm32f10x_conf.h
 .\objects\my_i2c.o: .\Library\stm32f10x_adc.h
@@ -28,5 +28,6 @@
 .\objects\my_i2c.o: .\Library\stm32f10x_usart.h
 .\objects\my_i2c.o: .\Library\stm32f10x_wwdg.h
 .\objects\my_i2c.o: .\Library\misc.h
-.\objects\my_i2c.o: Hardware\My_I2C.h
-.\objects\my_i2c.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\objects\my_i2c.o: Protocol\My_I2C.h
+.\objects\my_i2c.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\objects\my_i2c.o: .\System\system.h

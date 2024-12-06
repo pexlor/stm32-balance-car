@@ -1,9 +1,9 @@
 .\objects\tasks.o: FreeRTOS\tasks.c
-.\objects\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\tasks.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\tasks.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\tasks.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\tasks.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\tasks.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\tasks.o: .\FreeRTOS\include\FreeRTOSConfig.h
 .\objects\tasks.o: .\System\system.h
 .\objects\tasks.o: .\Start\stm32f10x.h
@@ -35,7 +35,7 @@
 .\objects\tasks.o: .\Library\stm32f10x_wwdg.h
 .\objects\tasks.o: .\Library\misc.h
 .\objects\tasks.o: .\System\usart.h
-.\objects\tasks.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\tasks.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\tasks.o: .\FreeRTOS\include\projdefs.h
 .\objects\tasks.o: .\FreeRTOS\include\portable.h
 .\objects\tasks.o: .\FreeRTOS\include\deprecated_definitions.h

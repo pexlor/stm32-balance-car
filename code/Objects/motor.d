@@ -1,7 +1,7 @@
 .\objects\motor.o: Hardware\Motor.c
 .\objects\motor.o: .\Start\stm32f10x.h
 .\objects\motor.o: .\Start\core_cm3.h
-.\objects\motor.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\motor.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\motor.o: .\Start\system_stm32f10x.h
 .\objects\motor.o: .\User\stm32f10x_conf.h
 .\objects\motor.o: .\Library\stm32f10x_adc.h
@@ -28,4 +28,5 @@
 .\objects\motor.o: .\Library\stm32f10x_usart.h
 .\objects\motor.o: .\Library\stm32f10x_wwdg.h
 .\objects\motor.o: .\Library\misc.h
-.\objects\motor.o: Hardware\PID.h
+.\objects\motor.o: .\User\PID.h
+.\objects\motor.o: Hardware\Motor.h

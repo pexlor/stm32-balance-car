@@ -1,8 +1,8 @@
 .\objects\timers.o: FreeRTOS\timers.c
-.\objects\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\timers.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\timers.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\timers.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\timers.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\timers.o: .\FreeRTOS\include\FreeRTOSConfig.h
 .\objects\timers.o: .\System\system.h
 .\objects\timers.o: .\Start\stm32f10x.h
@@ -34,7 +34,7 @@
 .\objects\timers.o: .\Library\stm32f10x_wwdg.h
 .\objects\timers.o: .\Library\misc.h
 .\objects\timers.o: .\System\usart.h
-.\objects\timers.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\timers.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\timers.o: .\FreeRTOS\include\projdefs.h
 .\objects\timers.o: .\FreeRTOS\include\portable.h
 .\objects\timers.o: .\FreeRTOS\include\deprecated_definitions.h

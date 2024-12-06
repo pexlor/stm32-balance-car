@@ -1,7 +1,7 @@
 .\objects\time.o: Hardware\Time.c
 .\objects\time.o: .\Start\stm32f10x.h
 .\objects\time.o: .\Start\core_cm3.h
-.\objects\time.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\time.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\time.o: .\Start\system_stm32f10x.h
 .\objects\time.o: .\User\stm32f10x_conf.h
 .\objects\time.o: .\Library\stm32f10x_adc.h

@@ -1,7 +1,7 @@
 .\objects\hc-05.o: Hardware\HC-05.c
 .\objects\hc-05.o: .\Start\stm32f10x.h
 .\objects\hc-05.o: .\Start\core_cm3.h
-.\objects\hc-05.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\hc-05.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\hc-05.o: .\Start\system_stm32f10x.h
 .\objects\hc-05.o: .\User\stm32f10x_conf.h
 .\objects\hc-05.o: .\Library\stm32f10x_adc.h

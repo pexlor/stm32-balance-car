@@ -1,8 +1,8 @@
 .\objects\list.o: FreeRTOS\list.c
-.\objects\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\list.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\list.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\list.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\list.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\list.o: .\FreeRTOS\include\FreeRTOSConfig.h
 .\objects\list.o: .\System\system.h
 .\objects\list.o: .\Start\stm32f10x.h
@@ -34,7 +34,7 @@
 .\objects\list.o: .\Library\stm32f10x_wwdg.h
 .\objects\list.o: .\Library\misc.h
 .\objects\list.o: .\System\usart.h
-.\objects\list.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\list.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\list.o: .\FreeRTOS\include\projdefs.h
 .\objects\list.o: .\FreeRTOS\include\portable.h
 .\objects\list.o: .\FreeRTOS\include\deprecated_definitions.h

@@ -1,9 +1,7 @@
 .\objects\systick.o: System\SysTick.c
-.\objects\systick.o: System\SysTick.h
-.\objects\systick.o: System\system.h
 .\objects\systick.o: .\Start\stm32f10x.h
 .\objects\systick.o: .\Start\core_cm3.h
-.\objects\systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\systick.o: D:\Software\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\systick.o: .\Start\system_stm32f10x.h
 .\objects\systick.o: .\User\stm32f10x_conf.h
 .\objects\systick.o: .\Library\stm32f10x_adc.h
@@ -30,15 +28,3 @@
 .\objects\systick.o: .\Library\stm32f10x_usart.h
 .\objects\systick.o: .\Library\stm32f10x_wwdg.h
 .\objects\systick.o: .\Library\misc.h
-.\objects\systick.o: .\FreeRTOS\include\FreeRTOS.h
-.\objects\systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\systick.o: .\FreeRTOS\include\FreeRTOSConfig.h
-.\objects\systick.o: .\System\usart.h
-.\objects\systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\systick.o: .\FreeRTOS\include\projdefs.h
-.\objects\systick.o: .\FreeRTOS\include\portable.h
-.\objects\systick.o: .\FreeRTOS\include\deprecated_definitions.h
-.\objects\systick.o: .\FreeRTOS\portable\RVDS\ARM_CM3\portmacro.h
-.\objects\systick.o: .\FreeRTOS\include\mpu_wrappers.h
-.\objects\systick.o: .\FreeRTOS\include\task.h
-.\objects\systick.o: .\FreeRTOS\include\list.h
